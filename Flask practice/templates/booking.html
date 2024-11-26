@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Page</title>
+
+    <style>
+		ul {
+		  list-style-type: none;
+		  margin: 0;
+		  padding: 0;
+		  overflow: hidden;
+		  background-color: #00385c;
+		}
+		
+		li {
+		  float: left;
+		}
+		
+		li a {
+		  display: block;
+		  color: white;
+		  text-align: center;
+		  padding: 14px 16px;
+		  text-decoration: none;
+		}
+		
+		li a:hover {
+		  background-color: #111;
+		}
+    #login{
+      position: absolute;
+      right: 30px;
+    }
+    #booking{
+        position: absolute;
+        right: 125px;
+    }
+    #logo{
+			position: absolute;
+			right: 850px;
+			top: -2px;
+		}
+    input[type="date"]::-webkit-calendar-picker-indicator {
+    background: transparent;
+    bottom: 0;
+    color: transparent;
+    cursor: pointer;
+    height: auto;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: auto;
+}
+		</style>
+</head>
+<body style="background-color:#BEE3BA;" >
+  <ul>
+    <li><a id="home" href="/">Home</a></li>
+    <li><a id="about" href="about">About</a></li>
+    <li><a id="health" href="health">Health</a></li>
+    <li><a id="contact" href="contact">Contact</a></li>
+    
+    {% if session['user'] %}
+    <li><a id="login" href="user">User</a></li>
+{% else %}
+    <li><a id="login" href="login">Login</a></li>
+{% endif %}
+
+    <li><a id="booking" href="booking">Bookings</a></li>
+</ul>
+      <img id="logo" src="/static/TokaFitness.PNG" alt="TokaLogo" style="width:100;height:50px">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css"></link>  
+    <h1 style="text-align: center;">Bookings Page</h1> <br>
+    <h3 style="text-align: center;">Want to book a service? Select a date and we'll get in contact</h3><br><br>
+
+    <form action="/save_booking" method="POST" style="text-align: center;">
+    <label for="type">Enter what service you would like:</label><br>
+
+    <select id="type" name="type" required>
+      <option selected="" selected disabled hidden>Select Option</option>
+      <option value="Health Advice">Health Advice</option>
+      <option value="Training Session">Training Session</option>
+      <option value="General Advice">General Advice</option>
+    </select><br><br>
+
+    <label>Enter what day you wish to do</label> 
+      <input type="date" id="date" required> <br><br><br>
+    <input type="submit">
+  </form> <br>
+    <h3 style="text-align: center;" >Your curent bookings are:</h3>
+</body>
+</html>

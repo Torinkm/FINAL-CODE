@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <title>Home Page</title>
+        <style>
+            ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                background-color: #00385c;
+            }
+            li {
+                float: left;
+            }
+            li a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+            li a:hover {
+                background-color: #111;
+            }
+            #login {
+                position: absolute;
+                right: 30px;
+            }
+            #booking {
+                position: absolute;
+                right: 125px;
+            }
+            #logo {
+                position: absolute;
+                right: 850px;
+                top: -2px;
+            }
+            #welcome {
+                position: absolute;
+                top: 200px;
+                right: 775px;
+            }
+            #started {
+                position: absolute;
+                top: 500px;
+                right: 875px;
+            }
+            #trust {
+                position: absolute;
+                top: 350px;
+                right: 810px;
+            }
+            h1 {
+                text-shadow: 3px 2px #111;
+            }
+            h2 {
+                text-shadow: 2px 2px #111;
+            }
+        </style>
+    </head>
+    <body style="background-color:#BEE3BA;">
+
+        <ul>
+            <li><a id="home" href="/">Home</a></li>
+            <li><a id="about" href="about">About</a></li>
+            <li><a id="health" href="health">Health</a></li>
+            <li><a id="contact" href="contact">Contact</a></li>
+            <li><a id="booking" href="booking">Bookings</a></li>
+            {% if session['user'] %}
+                <!-- User is logged in, show "User" page link -->
+                <li><a id="login" href="user">User</a></li>
+            {% else %}
+                <!-- User is not logged in, show "Login" button -->
+                <li><a id="login" href="login">Login</a></li>
+            {% endif %}
+        </ul>
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css"></link>
+        <img id="logo" src="/static/TokaFitness.PNG" alt="TokaLogo" style="width:100;height:50px">
+
+        <form id="started" action="login">
+            <input type="submit" value="Getting started? Click here!" />
+        </form>
+
+        <img src="/static/Homebanner.jpg" alt="banner" style="width: 2000px; height: 900px">
+        <h1 id="welcome" style="color:white;"> Welcome to TokaFitness {{name}}!</h1>
+        <h2 id="trust" style="color: white;">Trust us to better your health</h2>
+    </body>
+</html>

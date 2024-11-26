@@ -1,0 +1,21 @@
+
+<html>
+    <body style="background-color:#BEE3BA;">
+        <h2>
+            Welcome {{ name }}
+        </h2>
+        <form method="POST">
+            {{ form.hidden_tag() }}
+            {{ form.name.label }} {{ form.name() }}
+            {{ form.submit() }}
+        </form>
+        <div class="topnav">
+            <a class="active" href="/">Home</a>
+            <a href="contact">Contact</a>
+            <a href="about">About</a>
+            <a href="login" >Login</a>
+          </div> 
+          
+    </body>
+</html>
+

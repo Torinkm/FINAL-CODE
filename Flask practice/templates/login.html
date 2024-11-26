@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+
+    <style>
+		ul {
+		  list-style-type: none;
+		  margin: 0;
+		  padding: 0;
+		  overflow: hidden;
+		  background-color: #00385c;
+		}
+		
+		li {
+		  float: left;
+		}
+		
+		li a {
+		  display: block;
+		  color: white;
+		  text-align: center;
+		  padding: 14px 16px;
+		  text-decoration: none;
+		}
+		
+		li a:hover {
+		  background-color: #111;
+		}
+    #login{
+      position: absolute;
+      right: 30px;
+    }
+    #booking{
+        position: absolute;
+        right: 125px;
+    }
+    #logo{
+			position: absolute;
+			right: 850px;
+			top: -2px;
+		}
+    #logtext{
+      position: absolute;
+      right: 775px;
+    }
+		</style>
+</head>
+
+<ul>
+  <li><a id="home" href="/">Home</a></li>
+  <li><a id="about" href="about">About</a></li>
+  <li><a id="health" href="health">Health</a></li>
+  <li><a id="contact" href="contact">Contact</a></li>
+  <li><a id="login" href="login" >Login</a></li>
+  <li><a id="booking" href="booking">Bookings</a></li>
+</ul>
+
+<body style="background-color:#BEE3BA;">
+  <img id="logo" src="/static/TokaFitness.PNG" alt="TokaLogo" style="width:100;height:50px">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css"></link>
+    <form method="POST">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+      
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required>
+      
+      <button type="submit">Login</button>
+      <a class= 'nav-link' href="/register" stlye="text-align: center;"> Need to register?</a>
+  </form>
+</body>
+</html>
